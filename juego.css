@@ -14,7 +14,7 @@
 .rows {
   text-align: center;
   display: flex;
-  margin-left: 650px;
+  border: 2px darkblue;
   
   
   
