@@ -1,0 +1,38 @@
+.contenedor {
+  grid-template-columns: 300px 20px;
+  text-align: center;
+  border: 500px;
+  size: 80px;
+}
+
+.board {
+  display: inline-block;
+  margin-bottom: 20px;
+
+}
+
+.rows {
+  text-align: center;
+  display: flex;
+  border: 2px darkblue;
+  
+  
+  
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  border: 2px solid black;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+button {
+  font-size: 16px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
