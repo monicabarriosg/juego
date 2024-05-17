@@ -1,3 +1,4 @@
+
 .contenedor {
   grid-template-columns: 300px 20px;
   text-align: center;
@@ -14,25 +15,33 @@
 .rows {
   text-align: center;
   display: flex;
-  border: 2px darkblue;
-  
-  
-  
+  margin-left: 620px;
 }
 
 .cell {
   width: 100px;
   height: 100px;
-  border: 2px solid black;
+  border: 2px solid rgb(252, 252, 252);
   font-size: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  background-color: rgb(234, 177, 217);
+  margin-left: 3px;
+  
 }
 
 button {
   font-size: 16px;
   padding: 10px 20px;
   cursor: pointer;
+  margin-left: 660px;
+  margin-top: 40px;
+  background-color: rgb(235, 206, 224);
+  border-color: rgb(213, 195, 228);
+}
+.titulo{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin-right: 10px;
 }
