@@ -12,13 +12,13 @@
 
 }
 
-.rows {
+.fila {
   text-align: center;
   display: flex;
   margin-left: 620px;
 }
 
-.cell {
+.celda {
   width: 100px;
   height: 100px;
   border: 2px solid rgb(252, 252, 252);
