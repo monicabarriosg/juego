@@ -18,7 +18,7 @@
 // if (condition) {
     
 // }
-let ticTacToe = document.getElementsByClassName('celda')
+let ticTacToe = document.getElementsByClassName("celda");
 
 let b00 = document.getElementById("b00");
 let b01 = document.getElementById("b01");
@@ -31,8 +31,8 @@ let b21 = document.getElementById("b21");
 let b22 = document.getElementById("b22"); 
 
 // console.log(b00)
- let jugadorO = "O"
- let jugadorX = "X"
+ let jugadorO = "O";
+ let jugadorX = "X";
 
  let jugador1 = jugadorX
 
@@ -55,21 +55,56 @@ for (let index = 0; index < ticTacToe.length; index++) {
 
         // Este if es un semaforo si esta vacia la celda entonces la puede usar 
         if (ticTacToe[index2] != "") {
-            // Si está ocupada, genera un nuevo índice aleatorio y coloca una "x" en esa celda
+            // Si está ocupada, genera un nuevo índice aleatorio y coloca una "x" en ese espacio
+            // el por nueve es por la cantidad de espacios
+            // math.random para que tire un numero aleatorio
             index2 = Math.floor(Math.random() * 9)
             ticTacToe[index2].innerHTML = "X"
         } else {
-            // Si no está ocupada, simplemente coloca una "x" en esa celda
+            // Si no está ocupada, se va coloca una "x" en esa celda
             index2 = Math.floor(Math.random() * 9)
             ticTacToe[index2].innerHTML = "X"
         }
     
     }) 
-    function Gane(maquina,jugador) {
-      
+}
+
+    // funcion para ver el ganador
+   
+    function gane() {
+        let letra = ""
+        let fichas =[ "X", "O"]
+      for (let index = 0; index < fichas.length; index++) {
+         letra = fichas[a];
+        //  horizontal
+         if (board [b00] == letra && board [b10] == letra && board [b20] == letra) {
+            
+         }
+         if (board [b01] == letra && board [b11] == letra && board [b21] == letra ) {
+            
+         }
+         if (board [b02] == letra && board [b12] == letra && board [b22] == letra) {
+            
+         }
+         ////////////////////////////////////////////////////////////////////////////////////////////
+        //  vertical 
+        if (board [b00] == letra && board [b01] == letra && board [b02] == letra) {
+            
+        }
+        if (board [b10] == letra && board [b11] == letra && board [b12] == letra ) {
+           
+        }
+        if (board [b20] == letra && board [b21] == letra && board [b22] == letra) {
+           
+        }
+       /////////////////////////////////////////////////////////////////////////////////////////77
+       // diagonales 
+       if (board [b00] == letra && board ) {
         
-        
-    }
+       }
+      }
+              
+              
 
 
 

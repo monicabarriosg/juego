@@ -12,8 +12,8 @@ let b21 = document.getElementById("b21");
 let b22 = document.getElementById("b22"); 
 
 // console.log(b00)
- let jugadorO = "O"
- let jugadorX = "X"
+ let jugadorO = "❤️"
+ let jugadorX = "🍓"
 
  let jugador1 = jugadorX
 
@@ -32,17 +32,17 @@ for (let index = 0; index < ticTacToe.length; index++) {
     ticTacToe[index].addEventListener('click', function() {
         
         // ahora bien el jugador va a ser O po ende cuando de click en las celdas O es lo que se va a poner 
-        ticTacToe[index].innerHTML = "O";
+        ticTacToe[index].innerHTML = "❤️";
 
         // Este if es un semaforo si esta vacia la celda entonces la puede usar 
         if (ticTacToe[index2] != "") {
             // Si está ocupada, genera un nuevo índice aleatorio y coloca una "x" en esa celda
             index2 = Math.floor(Math.random() * 9)
-            ticTacToe[index2].innerHTML = "X"
+            ticTacToe[index2].innerHTML = "🍓"
         } else {
             // Si no está ocupada, simplemente coloca una "x" en esa celda
             index2 = Math.floor(Math.random() * 9)
-            ticTacToe[index2].innerHTML = "X"
+            ticTacToe[index2].innerHTML = "🍓"
         }
     
     }) 
