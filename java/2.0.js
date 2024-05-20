@@ -1,5 +1,5 @@
 
-let ticTacToe = document.getElementsByClassName('celda')
+let ticTacToe = document.getElementsByClassName("celda")
 
 let b00 = document.getElementById("b00");
 let b01 = document.getElementById("b01");
@@ -12,7 +12,7 @@ let b21 = document.getElementById("b21");
 let b22 = document.getElementById("b22"); 
 
 // console.log(b00)
- let jugadorO = "❤️"
+ let jugadorO = "🍇"
  let jugadorX = "🍓"
 
  let jugador1 = jugadorX
@@ -32,7 +32,7 @@ for (let index = 0; index < ticTacToe.length; index++) {
     ticTacToe[index].addEventListener('click', function() {
         
         // ahora bien el jugador va a ser O po ende cuando de click en las celdas O es lo que se va a poner 
-        ticTacToe[index].innerHTML = "❤️";
+        ticTacToe[index].innerHTML = "🍇";
 
         // Este if es un semaforo si esta vacia la celda entonces la puede usar 
         if (ticTacToe[index2] != "") {

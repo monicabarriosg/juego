@@ -19,7 +19,7 @@
     
 // }
 let ticTacToe = document.getElementsByClassName("celda");
-
+// conectado a mi html po id
 let b00 = document.getElementById("b00");
 let b01 = document.getElementById("b01");
 let b02 = document.getElementById("b02");
@@ -31,6 +31,7 @@ let b21 = document.getElementById("b21");
 let b22 = document.getElementById("b22"); 
 
 // console.log(b00)
+//declaro losmjugadoresque voy a utilizar
  let jugadorO = "O";
  let jugadorX = "X";
 
@@ -70,39 +71,57 @@ for (let index = 0; index < ticTacToe.length; index++) {
 }
 
     // funcion para ver el ganador
-   
     function gane() {
-        let letra = ""
+
+        let espacio = ""
+        // fichas es solo para qu el for sepa con que va  trabajar de la funcion
         let fichas =[ "X", "O"]
       for (let index = 0; index < fichas.length; index++) {
-         letra = fichas[a];
+         espacio = fichas[a];
         //  horizontal
-         if (board [b00] == letra && board [b10] == letra && board [b20] == letra) {
+        //board es mi parametro de tablero 
+         if (board [b00] == espacio && board [b10] == espacio && board [b20] == espacio) {
             
          }
-         if (board [b01] == letra && board [b11] == letra && board [b21] == letra ) {
+         
+        //  dara true si todos los operandos son true. En caso contrario, será false y brinca al siguiente if .
+         if (board [b01] == espacio && board [b11] == espacio && board [b21] == espacio ) {
             
          }
-         if (board [b02] == letra && board [b12] == letra && board [b22] == letra) {
+        //  igual igual ya que debe cumplirse cada uno 
+         if (board [b02] == espacio && board [b12] == espacio && board [b22] == espacio) {
             
          }
          ////////////////////////////////////////////////////////////////////////////////////////////
         //  vertical 
-        if (board [b00] == letra && board [b01] == letra && board [b02] == letra) {
+        if (board [b00] == espacio && board [b01] == espacio && board [b02] == espacio) {
             
         }
-        if (board [b10] == letra && board [b11] == letra && board [b12] == letra ) {
+        if (board [b10] == espacio && board [b11] == espacio && board [b12] == espacio ) {
            
         }
-        if (board [b20] == letra && board [b21] == letra && board [b22] == letra) {
+        if (board [b20] == espacio && board [b21] == espacio && board [b22] == espacio) {
            
         }
+       
        /////////////////////////////////////////////////////////////////////////////////////////77
        // diagonales 
-       if (board [b00] == letra && board ) {
+       if (board [b00] == espacio && board [b11] == espacio && board [b22] == espacio) {
+        
+       }
+       if (board [b02] == espacio && board [b11] == espacio && board [b20] == espacio) {
         
        }
       }
+
+      
+    //   console.log();
+    ///funcion para mostrar el ganador 
+    //darGanador ("ganador" + espacio)
+    function darGanador(ganador) {
+        document.getElementById("ganaste").innerHTML = ganador 
+        
+    }
               
               
 
