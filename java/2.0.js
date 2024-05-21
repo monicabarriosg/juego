@@ -12,9 +12,9 @@ let b22 = document.getElementById("b22");
 
 // console.log(b00)
 //declaro losmjugadoresque voy a utilizar
- let jugadorO = "O";
- let jugadorX = "X";
-
+ let jugadorO = "🍓"; 
+ let jugadorX = "🍇";
+// fresa es o
  let jugador1 = jugadorX
 
  const matriz =[
@@ -33,20 +33,20 @@ for (let index = 0; index < ticTacToe.length; index++) {
     ticTacToe[index].addEventListener('click', function() {
         
         // ahora bien el jugador va a ser O po ende cuando de click en las celdas O es lo que se va a poner 
-        ticTacToe[index].innerHTML = "O";
+        ticTacToe[index].innerHTML = "🍓";
 
         
         for (let index = 0; index < 30; index++) {
             index2 = Math.floor(Math.random() * 9)
             // Este if es un semaforo si esta vacia la celda entonces la puede usar 
             
-            if (ticTacToe[index2].innerHTML != "O" && ticTacToe[index2].innerHTML != "X") {
+            if (ticTacToe[index2].innerHTML != "🍓" && ticTacToe[index2].innerHTML != "🍇") {
                 // Si está ocupada, genera un nuevo índice aleatorio y coloca una "x" en ese espacio
                 // el por nueve es por la cantidad de espacios
                 // math.random para que tire un numero aleatorio
                 setTimeout(() => {
                     console.log(ticTacToe[index2]); 
-                    ticTacToe[index2].innerHTML = "X"
+                    ticTacToe[index2].innerHTML = "🍇"
                   }, 1000);
                 
                 break
@@ -66,7 +66,7 @@ for (let index = 0; index < ticTacToe.length; index++) {
 
         let espacio = ""
         // fichas es solo para qu el for sepa con que va  trabajar de la funcion
-        let fichas =[ "X", "O"]
+        let fichas =[ "🍇", "🍓"]
       for (let index = 0; index < fichas.length; index++) {
         //  espacio = ;
 
