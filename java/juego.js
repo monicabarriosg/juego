@@ -43,7 +43,8 @@ let b22 = document.getElementById("b22");
  [b20,b21,b22]
  ]
 // console.log(matriz)
-let index2
+let index2;
+let cont = 0;
 
 // este for me ayuda a iterar lo que declare dentro de ticTacToe
 for (let index = 0; index < ticTacToe.length; index++) {
@@ -54,18 +55,28 @@ for (let index = 0; index < ticTacToe.length; index++) {
         // ahora bien el jugador va a ser O po ende cuando de click en las celdas O es lo que se va a poner 
         ticTacToe[index].innerHTML = "O";
 
-        // Este if es un semaforo si esta vacia la celda entonces la puede usar 
-        if (ticTacToe[index2] != "") {
-            // Si está ocupada, genera un nuevo índice aleatorio y coloca una "x" en ese espacio
-            // el por nueve es por la cantidad de espacios
-            // math.random para que tire un numero aleatorio
+        
+        for (let index = 0; index < 30; index++) {
             index2 = Math.floor(Math.random() * 9)
-            ticTacToe[index2].innerHTML = "X"
-        } else {
-            // Si no está ocupada, se va coloca una "x" en esa celda
-            index2 = Math.floor(Math.random() * 9)
-            ticTacToe[index2].innerHTML = "X"
+            // Este if es un semaforo si esta vacia la celda entonces la puede usar 
+            
+            if (ticTacToe[index2].innerHTML != "O" && ticTacToe[index2].innerHTML != "X") {
+                // Si está ocupada, genera un nuevo índice aleatorio y coloca una "x" en ese espacio
+                // el por nueve es por la cantidad de espacios
+                // math.random para que tire un numero aleatorio
+                setTimeout(() => {
+                    console.log(ticTacToe[index2]); 
+                    ticTacToe[index2].innerHTML = "X"
+                  }, 1000);
+                
+                break
+
+            } 
+        }   
+        if (gane()) {
+            return
         }
+       
     
     }) 
 }
@@ -77,44 +88,49 @@ for (let index = 0; index < ticTacToe.length; index++) {
         // fichas es solo para qu el for sepa con que va  trabajar de la funcion
         let fichas =[ "X", "O"]
       for (let index = 0; index < fichas.length; index++) {
-         espacio = fichas[a];
+        //  espacio = ;
+
+        // console.log();
+
         //  horizontal
-        //board es mi parametro de tablero 
-         if (board [b00] == espacio && board [b10] == espacio && board [b20] == espacio) {
+        // es mi parametro de tablero 
+         if (b00.innerHTML == fichas[index] && b01.innerHTML == fichas[index] && b02.innerHTML == fichas[index]) {
+
             
+            return alert("Ganaste", fichas[index]);
          }
          
         //  dara true si todos los operandos son true. En caso contrario, será false y brinca al siguiente if .
-         if (board [b01] == espacio && board [b11] == espacio && board [b21] == espacio ) {
-            
+         if (b10.innerHTML == fichas[index] && b11.innerHTML == fichas[index] && b12.innerHTML == fichas[index] ) {
+            return alert("Ganaste", fichas[index]);
          }
         //  igual igual ya que debe cumplirse cada uno 
-         if (board [b02] == espacio && board [b12] == espacio && board [b22] == espacio) {
-            
+         if (b02.innerHTML == fichas[index] && b12.innerHTML == fichas[index] && b22.innerHTML == fichas[index]) {
+            return alert("Ganaste", fichas[index]);
          }
          ////////////////////////////////////////////////////////////////////////////////////////////
         //  vertical 
-        if (board [b00] == espacio && board [b01] == espacio && board [b02] == espacio) {
-            
+        if (b00.innerHTML == fichas[index] && b10.innerHTML == fichas[index] && b20.innerHTML == fichas[index]) {
+            return alert("Ganaste", fichas[index]);
         }
-        if (board [b10] == espacio && board [b11] == espacio && board [b12] == espacio ) {
-           
+        if (b01.innerHTML == fichas[index] && b11.innerHTML == fichas[index] && b21.innerHTML == fichas[index]) {
+           return alert("Ganaste", fichas[index]);
         }
-        if (board [b20] == espacio && board [b21] == espacio && board [b22] == espacio) {
-           
+        if (b20.innerHTML == fichas[index] && b21.innerHTML == fichas[index] && b22.innerHTML == fichas[index]) {
+           return alert("Ganaste", fichas[index]);
         }
        
        /////////////////////////////////////////////////////////////////////////////////////////77
        // diagonales 
-       if (board [b00] == espacio && board [b11] == espacio && board [b22] == espacio) {
-        
+       if (b00.innerHTML == fichas[index] && b11.innerHTML == fichas[index] && b22.innerHTML == fichas[index]) {
+        return alert("Ganaste", fichas[index]);
        }
-       if (board [b02] == espacio && board [b11] == espacio && board [b20] == espacio) {
-        
+       if (b20.innerHTML == fichas[index] && b11.innerHTML == fichas[index] && b02.innerHTML == fichas[index]) {
+        return alert ("Ganaste", fichas[index]);
        }
       }
 
-      
+    //   console.log()
     //   console.log();
     ///funcion para mostrar el ganador 
     //darGanador ("ganador" + espacio)
