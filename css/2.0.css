@@ -1,10 +1,17 @@
 
-
+.fondo{
+  font-family: Verdana;
+background-image: url(https://i.pinimg.com/564x/1a/9c/c4/1a9cc4ae5e7f7a5e097ae9ded89d37e8.jpg);
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: cover;
+}
 .contenedor {
   grid-template-columns: 300px 20px;
   text-align: center;
   border: 500px;
   size: 80px;
+  margin-top: 5%;
 }
 
 .board {
@@ -17,14 +24,15 @@
   text-align: center;
   display: flex;
   margin-left: 620px;
+  
 }
 
 .celda {
+  
   width: 100px;
   height: 100px;
   border: 2px solid rgb(252, 252, 252);
   font-size: 40px;
-  display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
@@ -39,8 +47,9 @@ button {
   cursor: pointer;
   margin-left: 660px;
   margin-top: 40px;
-  background-color: rgb(235, 206, 224);
-  border-color: rgb(213, 195, 228);
+  background-color: rgb(219, 162, 203);
+  border-color: rgb(197, 146, 240);
+  
 }
 .titulo{
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;

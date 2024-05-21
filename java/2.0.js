@@ -10,40 +10,35 @@ let b20 = document.getElementById("b20");
 let b21 = document.getElementById("b21");
 let b22 = document.getElementById("b22"); 
 
-// console.log(b00)
-//declaro losmjugadoresque voy a utilizar
+//declaro los jugadores que voy a utilizar
  let jugadorO = "🍓"; 
  let jugadorX = "🍇";
 // fresa es o
- let jugador1 = jugadorX
+// uva es x
 
+// la matriz que sera rcorrida 
  const matriz =[
  [b00,b01,b02],
  [b10,b11,b12],
  [b20,b21,b22]
  ]
-// console.log(matriz)
+
 let index2;
-let cont = 0;
+
 
 // este for me ayuda a iterar lo que declare dentro de ticTacToe
 for (let index = 0; index < ticTacToe.length; index++) {
-   
-    // esta en la escucha de cada click enlas celdas 
+
     ticTacToe[index].addEventListener('click', function() {
         
-        // ahora bien el jugador va a ser O po ende cuando de click en las celdas O es lo que se va a poner 
         ticTacToe[index].innerHTML = "🍓";
 
         
         for (let index = 0; index < 30; index++) {
             index2 = Math.floor(Math.random() * 9)
-            // Este if es un semaforo si esta vacia la celda entonces la puede usar 
+
             
             if (ticTacToe[index2].innerHTML != "🍓" && ticTacToe[index2].innerHTML != "🍇") {
-                // Si está ocupada, genera un nuevo índice aleatorio y coloca una "x" en ese espacio
-                // el por nueve es por la cantidad de espacios
-                // math.random para que tire un numero aleatorio
                 setTimeout(() => {
                     console.log(ticTacToe[index2]); 
                     ticTacToe[index2].innerHTML = "🍇"
@@ -54,26 +49,24 @@ for (let index = 0; index < ticTacToe.length; index++) {
             } 
         }   
         if (gane()) {
-            return
+            return  
         }
+        
        
     
-    }) 
+    }
+    )
+   
 }
 
     // funcion para ver el ganador
     function gane() {
 
-        let espacio = ""
+      
         // fichas es solo para qu el for sepa con que va  trabajar de la funcion
         let fichas =[ "🍇", "🍓"]
       for (let index = 0; index < fichas.length; index++) {
-        //  espacio = ;
-
-        // console.log();
-
-        //  horizontal
-        // es mi parametro de tablero 
+      
          if (b00.innerHTML == fichas[index] && b01.innerHTML == fichas[index] && b02.innerHTML == fichas[index]) {
 
             
@@ -109,6 +102,9 @@ for (let index = 0; index < ticTacToe.length; index++) {
         return alert ("Ganaste", fichas[index]);
        }
       }
+      ///////////////////////////////////////////////////////////////////////////////////////////////////7
+      //empate
+
 
     //   console.log()
     //   console.log();
@@ -119,7 +115,40 @@ for (let index = 0; index < ticTacToe.length; index++) {
         
     }
               
-              
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -157,7 +186,7 @@ for (let index = 0; index < ticTacToe.length; index++) {
 
     
 // }
-}
+
 
 
 
@@ -194,7 +223,5 @@ for (let index = 0; index < ticTacToe.length; index++) {
 //         }
         
 //     })
-
-    
 // }
 
