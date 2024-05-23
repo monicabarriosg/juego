@@ -1,6 +1,6 @@
 
 .fondo{
-  font-family: Verdana;
+font-family: Verdana;
 background-image: url(https://i.pinimg.com/564x/1a/9c/c4/1a9cc4ae5e7f7a5e097ae9ded89d37e8.jpg);
 background-repeat: no-repeat;
 background-attachment: fixed;
@@ -26,6 +26,9 @@ background-size: cover;
   margin-left: 620px;
   
 }
+.celda:hover {
+  background-color: rgb(209, 188, 240);; /* Cambia el color de fondo al pasar sobre las celdas */
+}
 
 .celda {
   
@@ -38,6 +41,7 @@ background-size: cover;
   cursor: pointer;
   background-color: rgb(175, 139, 229);
   margin-left: 3px;
+  border-radius: 10px; /* Bordes redondeados */
   
 }
 
@@ -56,8 +60,8 @@ background-size: cover;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   margin-right: 10px;
 }
-.audio{
+/* .audio{
   padding: 30px 10px 12px;
  margin-left: 20px;
  margin-top: 40px;
-}
+} */
