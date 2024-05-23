@@ -50,6 +50,7 @@ for (let index = 0; index < ticTacToe.length; index++) {
             } 
         }   
         if (gane()) {
+            
             return  
         }
         
@@ -107,17 +108,6 @@ for (let index = 0; index < ticTacToe.length; index++) {
       //empate
 }
 
-
-
-
-
-
-
-
-
-
-
- 
     //boton para borrar el tablero
     reiniciarBtn.addEventListener("click", reiniciarTablero);
     
@@ -151,75 +141,4 @@ for (let index = 0; index < ticTacToe.length; index++) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// for (let index = 0; index < ticTacToe.length; index++) {
-//     ticTacToe[index].addEventListener("click", function () {
-//         ticTacToe[index].innerHTML ="X";
-//         if (ticTacToe[index2] === "X") {
-//             return
-//         } else {
-//             alert("gano")
-            
-//         }
-        
-//     })
-
-    
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// for (let index = 0; index < ticTacToe.length; index++) {
-//     ticTacToe[index].addEventListener("click", function () {
-//         ticTacToe[index].innerHTML ="X";
-//         if (ticTacToe[index2] === "X") {
-//             return
-//         } else {
-//             alert("gano")
-            
-//         }
-        
-//     })
-// }
 

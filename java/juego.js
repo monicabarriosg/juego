@@ -44,22 +44,7 @@ let b22 = document.getElementById("b22");
  [b20,b21,b22]
  ]
  let index2
-//  for (let index = 0; index < ticTacToe.length; index++) {
-//     ticTacToe[index].addEventListener('click', function() {
-//         // Verificar si el juego ha terminado
-//         if (!juegoTerminado) {
-//             // Lógica del juego aquí...
-//             // Cuando el juego termina, establece juegoTerminado en true
-//             if (gane()) {
-//                 juegoTerminado = true;
-//                 // Remover el event listener de todas las celdas
-//                 for (let i = 0; i < ticTacToe.length; i++) {
-//                     ticTacToe[i].removeEventListener('click', arguments.callee); // Remover el event listener actual
-//                 }
-//             }
-//         }
-//     });
-// }
+
 
 // este for me ayuda a iterar lo que declare dentro de ticTacToe
 for (let index = 0; index < ticTacToe.length; index++) {
