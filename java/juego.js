@@ -42,106 +42,124 @@ let b22 = document.getElementById("b22");
  [b10,b11,b12],
  [b20,b21,b22]
  ]
-
-let index2;
+//  for (let index = 0; index < ticTacToe.length; index++) {
+//     ticTacToe[index].addEventListener('click', function() {
+//         // Verificar si el juego ha terminado
+//         if (!juegoTerminado) {
+//             // Lógica del juego aquí...
+//             // Cuando el juego termina, establece juegoTerminado en true
+//             if (gane()) {
+//                 juegoTerminado = true;
+//                 // Remover el event listener de todas las celdas
+//                 for (let i = 0; i < ticTacToe.length; i++) {
+//                     ticTacToe[i].removeEventListener('click', arguments.callee); // Remover el event listener actual
+//                 }
+//             }
+//         }
+//     });
+// }
 
 
 // este for me ayuda a iterar lo que declare dentro de ticTacToe
 for (let index = 0; index < ticTacToe.length; index++) {
-   
     // esta en la escucha de cada click en las celdas 
-    ticTacToe[index].addEventListener('click', function() {
-
+    ticTacToe[index].addEventListener('click', function  () {
         
         // ahora bien el jugador va a ser O por ende cuando de click en las celdas O es lo que se va a poner 
         ticTacToe[index].innerHTML = "O";
-        
-        for (let index = 0; index < 15; index++) {
+        //una bandera en verdadero para iniciar el while
+        flag = true;
+        //el contador va a empezar en 0 y va a ir sumanso miestras se vaya jugando 
+        let cont = 0;
+        while (flag) {
+            cont++;
             index2 = Math.floor(Math.random() * 9)
-            
-            
             if (ticTacToe[index2].innerHTML != "O" && ticTacToe[index2].innerHTML != "X") {
-             
+                //setTime es para que el bot tenga un tiemo para poner la ficha en este caso sera de 1 segundo
+                //para no tire de una vez la ficha y parezca que esta calculando donde poner la ficha 
                 setTimeout(() => {
-                    console.log(ticTacToe[index2]); 
+                    //console.log(ticTacToe[index2]); 
                     ticTacToe[index2].innerHTML = "X"
-                  }, 1000);
-                
-                break
-            } 
-        }   
-        
+                }, 1000);     
+                flag = false;
+                //termina la funcion y entonces pasa a falso
+                //es decir cuando mi contador vea que es igual igual a 9 la bandera cambia a falso
+            }else if (cont == 9) {
+                flag = false;
+            }
+        }
+        //if para el gane de  mi funcion 
         if (gane()) {
         
+              
     
         }
     
     } 
     
+    
 ) 
 
 
+// console.log()
+
 }
 
-    // funcion para ver el ganador
+    // funcion para velidar el ganador
     function gane() {
-        // fichas es solo para qu el for sepa con que va  trabajar de la funcion
-        let fichas =[ "X", "O"]
-      for (let index = 0; index < fichas.length; index++) {
-       
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        // ganes en horizontal
-        //  dara true si todos los operandos son true. En caso contrario, será false y brinca al siguiente if .
-        // el if empieza con el nombre del id del div 
-         if (b00.innerHTML == fichas[index] && b01.innerHTML == fichas[index] && b02.innerHTML == fichas[index]) {
-        // luego de haber buscado si esta posibilidad de gane existe en el tictactoe si es true tira el gane y si no pasa al siguiente if
-        //  dara true si todos los operandos son true. En caso contrario, será false y brinca al siguiente if .
-            return alert("Ganaste", fichas[index]);
-        
-         }
-         
-     
-         if (b10.innerHTML == fichas[index] && b11.innerHTML == fichas[index] && b12.innerHTML == fichas[index] ) {
-            return alert("Ganaste", fichas[index]);
-         }
-         
-         if (b02.innerHTML == fichas[index] && b12.innerHTML == fichas[index] && b22.innerHTML == fichas[index]) {
-            return alert("Ganaste", fichas[index]);
-         }
-         ////////////////////////////////////////////////////////////////////////////////////////////
-        // ganes en vertical 
-        
-
-        if (b00.innerHTML == fichas[index] && b10.innerHTML == fichas[index] && b20.innerHTML == fichas[index]) {
-            return alert("Ganaste", fichas[index]);
-        }
-        if (b01.innerHTML == fichas[index] && b11.innerHTML == fichas[index] && b21.innerHTML == fichas[index]) {
-           return alert("Ganaste", fichas[index]);
-        }
-        if (b20.innerHTML == fichas[index] && b21.innerHTML == fichas[index] && b22.innerHTML == fichas[index]) {
-           return alert("Ganaste", fichas[index]);
-        }
-       
-       /////////////////////////////////////////////////////////////////////////////////////////
-       // ganes en diagonales 
-       if (b00.innerHTML == fichas[index] && b11.innerHTML == fichas[index] && b22.innerHTML == fichas[index]) {
-        return alert("Ganaste", fichas[index]);
-       }
-       if (b20.innerHTML == fichas[index] && b11.innerHTML == fichas[index] && b02.innerHTML == fichas[index]) {
-        return alert ("Ganaste", fichas[index]);
-       }
-      }
-      
+        // Variable para contar el número de celdas marcadas
+        let marcadas = 0;
+        // Variable para almacenar las fichas
+        let fichas = ["X", "O"];
     
+        // Verificar si hay un ganador en las combinaciones horizontales, verticales y diagonales
+        for (let index = 0; index < fichas.length; index++) {
+            // Combinaciones horizontales
+            if ((b00.innerHTML == fichas[index] && b01.innerHTML == fichas[index] && b02.innerHTML == fichas[index]) ||
+                (b10.innerHTML == fichas[index] && b11.innerHTML == fichas[index] && b12.innerHTML == fichas[index]) ||
+                (b20.innerHTML == fichas[index] && b21.innerHTML == fichas[index] && b22.innerHTML == fichas[index])) {
+                return alert("Ganaste", fichas[index]);
+            }
+            // Combinaciones verticales
+            if ((b00.innerHTML == fichas[index] && b10.innerHTML == fichas[index] && b20.innerHTML == fichas[index]) ||
+                (b01.innerHTML == fichas[index] && b11.innerHTML == fichas[index] && b21.innerHTML == fichas[index]) ||
+                (b02.innerHTML == fichas[index] && b12.innerHTML == fichas[index] && b22.innerHTML == fichas[index])) {
+                return alert("Ganaste", fichas[index]);
+            }
+            // Combinaciones diagonales
+            if ((b00.innerHTML == fichas[index] && b11.innerHTML == fichas[index] && b22.innerHTML == fichas[index]) ||
+                (b20.innerHTML == fichas[index] && b11.innerHTML == fichas[index] && b02.innerHTML == fichas[index])) {
+                return alert("Ganaste", fichas[index]);
+            }
+        }
+    
+        // Verificar si hay empate
+        for (let i = 0; i < ticTacToe.length; i++) {
+            if (ticTacToe[i].innerHTML !== "") {
+                marcadas++;
+            }
+        }
+        // Si todas las celdas están marcadas y no hay ganador, es un empate
+        if (marcadas === ticTacToe.length) {
+            return alert("Empate");
+        }
+    }
+    
+
     //   console.log()
     //   console.log();
     ///funcion para mostrar el ganador 
     //darGanador ("ganador" + espacio)
-    function darGanador(ganador) {
-        document.getElementById("ganaste").innerHTML = ganador 
+    // function darGanador(ganador) {
+    //     document.getElementById("ganaste").innerHTML = ganador 
+    //     if (gane()) {
         
-    }
+    //         ticTacToe[index].removeEventListener('click',function  () {
+                        
+    //         } );
+    
+    //      }
+    // }
               
               
 
@@ -181,6 +199,6 @@ for (let index = 0; index < ticTacToe.length; index++) {
 
     
 // }
-}
+
 
 
