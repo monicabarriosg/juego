@@ -120,6 +120,8 @@ for (let index = 0; index < ticTacToe.length; index++) {
 
 }
 
+var mediaElem = document.getElementById("my-media-element");
+mediaElem.load();
 
 
 
