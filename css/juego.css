@@ -5,7 +5,9 @@
   border: 500px;
   size: 80px;
 }
-
+.celda:hover {
+  background-color: #f1aaed; /* Cambia el color de fondo al pasar sobre las celdas */
+}
 .board {
   display: inline-block;
   margin-bottom: 20px;
@@ -29,10 +31,10 @@
   cursor: pointer;
   background-color: rgb(234, 177, 217);
   margin-left: 3px;
+  border-radius: 10px; /* Bordes redondeados */
   
 }
-
-button {
+/* button {
   font-size: 16px;
   padding: 10px 20px;
   cursor: pointer;
@@ -40,7 +42,30 @@ button {
   margin-top: 40px;
   background-color: rgb(235, 206, 224);
   border-color: rgb(213, 195, 228);
+  
+} */
+.btnefect{
+  transition:  transform 0.3s ease-in-out;;
 }
+.pulse-effect {
+  border: none;
+  background-color: rgb(222, 144, 206);
+  padding: 14px 28px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: transform 0.3s ease-in-out; /* Transición suave del efecto de pulsación */
+  margin-left: 45%;
+  margin-top: 2%;
+}
+
+.pulse-effect:hover {
+  background-color: #f67ebe; /* Cambia el color al pasar el cursor sobre el botón */
+}
+
+.pulse-effect:active {
+  transform: scale(0.90); /* Reduce ligeramente el tamaño del botón cuando se hace clic */
+}
+
 .titulo{
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   margin-right: 10px;

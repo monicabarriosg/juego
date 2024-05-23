@@ -1,4 +1,5 @@
 let ticTacToe = document.getElementsByClassName("celda");
+let reiniciarBtn = document.getElementById("reiniciarBtn");
 // conectado a mi html po id
 let b00 = document.getElementById("b00");
 let b01 = document.getElementById("b01");
@@ -104,24 +105,8 @@ for (let index = 0; index < ticTacToe.length; index++) {
       }
       ///////////////////////////////////////////////////////////////////////////////////////////////////7
       //empate
-
-
-    //   console.log()
-    //   console.log();
-    ///funcion para mostrar el ganador 
-    //darGanador ("ganador" + espacio)
-    function darGanador(ganador) {
-        document.getElementById("ganaste").innerHTML = ganador 
-        
-    }
-              
-
-
-
 }
 
-var mediaElem = document.getElementById("my-media-element");
-mediaElem.load();
 
 
 
@@ -132,6 +117,17 @@ mediaElem.load();
 
 
 
+ 
+    //boton para borrar el tablero
+    reiniciarBtn.addEventListener("click", reiniciarTablero);
+    
+    //declaro la funcion 
+    function reiniciarTablero() {
+        //y utilizo este for que toma todo mi tablero y lo vacia al hacer click en el btn
+        for (let i = 0; i < ticTacToe.length; i++) {
+            ticTacToe[i].innerHTML = "";
+        }
+    }
 
 
 

@@ -19,6 +19,7 @@
     
 // }
 let ticTacToe = document.getElementsByClassName("celda");
+let reiniciarBtn = document.getElementById("reiniciarBtn");
 // conectado a mi html po id
 let b00 = document.getElementById("b00");
 let b01 = document.getElementById("b01");
@@ -42,6 +43,7 @@ let b22 = document.getElementById("b22");
  [b10,b11,b12],
  [b20,b21,b22]
  ]
+ let index2
 //  for (let index = 0; index < ticTacToe.length; index++) {
 //     ticTacToe[index].addEventListener('click', function() {
 //         // Verificar si el juego ha terminado
@@ -58,7 +60,6 @@ let b22 = document.getElementById("b22");
 //         }
 //     });
 // }
-
 
 // este for me ayuda a iterar lo que declare dentro de ticTacToe
 for (let index = 0; index < ticTacToe.length; index++) {
@@ -105,28 +106,30 @@ for (let index = 0; index < ticTacToe.length; index++) {
 
 }
 
+
     // funcion para velidar el ganador
     function gane() {
-        // Variable para contar el número de celdas marcadas
+        // esta variable es para que si todas las celdas del tic tac toe estan marcadas ero no se cumplio 
+        //ninguna condicion anterior entonces sea un empate
         let marcadas = 0;
-        // Variable para almacenar las fichas
+        // esta variale es para que el for sepa co que van a jugar
         let fichas = ["X", "O"];
     
-        // Verificar si hay un ganador en las combinaciones horizontales, verticales y diagonales
+        // es for es mi filtro para saber prmedi de las fichas cual es el gane si horizontal vertical o  en diagonal
         for (let index = 0; index < fichas.length; index++) {
-            // Combinaciones horizontales
+            // ganes en horizontal
             if ((b00.innerHTML == fichas[index] && b01.innerHTML == fichas[index] && b02.innerHTML == fichas[index]) ||
                 (b10.innerHTML == fichas[index] && b11.innerHTML == fichas[index] && b12.innerHTML == fichas[index]) ||
                 (b20.innerHTML == fichas[index] && b21.innerHTML == fichas[index] && b22.innerHTML == fichas[index])) {
                 return alert("Ganaste", fichas[index]);
             }
-            // Combinaciones verticales
+            // ganes en vertical
             if ((b00.innerHTML == fichas[index] && b10.innerHTML == fichas[index] && b20.innerHTML == fichas[index]) ||
                 (b01.innerHTML == fichas[index] && b11.innerHTML == fichas[index] && b21.innerHTML == fichas[index]) ||
                 (b02.innerHTML == fichas[index] && b12.innerHTML == fichas[index] && b22.innerHTML == fichas[index])) {
                 return alert("Ganaste", fichas[index]);
             }
-            // Combinaciones diagonales
+            // ganes de las diagonales
             if ((b00.innerHTML == fichas[index] && b11.innerHTML == fichas[index] && b22.innerHTML == fichas[index]) ||
                 (b20.innerHTML == fichas[index] && b11.innerHTML == fichas[index] && b02.innerHTML == fichas[index])) {
                 return alert("Ganaste", fichas[index]);
@@ -161,30 +164,25 @@ for (let index = 0; index < ticTacToe.length; index++) {
     //      }
     // }
               
-              
+            
+
+
+    
+    //boton para borrar el tablero
+    reiniciarBtn.addEventListener("click", reiniciarTablero);
+    
+    //declaro la funcion 
+    function reiniciarTablero() {
+        //y utilizo este for que toma todo mi tablero y lo vacia al hacer click en el btn
+        for (let i = 0; i < ticTacToe.length; i++) {
+            ticTacToe[i].innerHTML = "";
+        }
+    }
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 // for (let index = 0; index < ticTacToe.length; index++) {
 //     ticTacToe[index].addEventListener("click", function () {
 //         ticTacToe[index].innerHTML ="X";
