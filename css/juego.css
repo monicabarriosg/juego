@@ -1,4 +1,3 @@
-
 .contenedor {
   grid-template-columns: 300px 20px;
   text-align: center;
@@ -34,17 +33,6 @@
   border-radius: 10px; /* Bordes redondeados */
   
 }
-/* button {
-  font-size: 16px;
-  padding: 10px 20px;
-  cursor: pointer;
-  margin-left: 660px;
-  margin-top: 40px;
-  background-color: rgb(235, 206, 224);
-  border-color: rgb(213, 195, 228);
-  
-} */
-
 /* boton para ir a otro gato */
 .pulse-effect {
   border: none;
@@ -87,4 +75,13 @@
 }
 .boot:hover{
   background-color: aliceblue;
+}
+#cortina {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
 }

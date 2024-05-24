@@ -1,6 +1,7 @@
 let ticTacToe = document.getElementsByClassName("celda");
 let reiniciarBtn = document.getElementById("reiniciarBtn");
-let turno = document.getElementsByClassName("turno");
+let turnoActual = document.getElementById("turnoActual")
+
 // conectado a mi html po id
 let b00 = document.getElementById("b00");
 let b01 = document.getElementById("b01");
@@ -21,12 +22,20 @@ const matriz = [
   [b20, b21, b22],
 ];
 let index2;
+// Variables para mantener el seguimiento del jugador actual
+let jugadorActual = jugadorO;
+
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
 // este for me ayuda a iterar lo que declare dentro de ticTacToe
 for (let index = 0; index < ticTacToe.length; index++) {
   // esta en la escucha de cada click en las celdas
+ 
   ticTacToe[index].addEventListener("click", function () {
+    
+    //operador ternario
+    jugadorActual = (jugadorActual === jugadorO) ? jugadorX : jugadorO;
+    document.getElementById("turnoActual").innerText = "Turno de: " + jugadorActual;
     // ahora bien el jugador va a ser O por ende cuando de click en las celdas O es lo que se va a poner
     ticTacToe[index].innerHTML = "O";
     //una bandera en verdadero para iniciar el while
@@ -56,13 +65,16 @@ for (let index = 0; index < ticTacToe.length; index++) {
     }
     //if para el gane de  mi funcion
     if (gane()) {
-    }
+     
+    } 
+    
   });
 }
+
 //////////////////////////////////////////////////////////////////////////////////////////////////
 // funcion para velidar el ganador
 function gane() {
-    
+  
   // esta variable es para que si todas las celdas del tic tac toe estan marcadas ero no se cumplio
   //ninguna condicion anterior entonces sea un empate
   let marcadas = 0;
@@ -84,7 +96,8 @@ function gane() {
         b22.innerHTML == fichas[index])
     ) {
       
-      return alert("Ganaste", fichas[index]);
+      return alert("¡Ganaste! El jugador " + fichas[index] + " ha ganado.");
+
     }
     /////////////////////////////////////////////
     // ganes en vertical
@@ -99,7 +112,7 @@ function gane() {
         b12.innerHTML == fichas[index] &&
         b22.innerHTML == fichas[index])
     ) {
-      return alert("Ganaste", fichas[index]);
+      return alert("¡Ganaste! El jugador " + fichas[index] + " ha ganado.");
     }
     /////////////////////////////////////////////////
     // ganes de las diagonales
@@ -111,7 +124,7 @@ function gane() {
         b11.innerHTML == fichas[index] &&
         b02.innerHTML == fichas[index])
     ) {
-      return alert("Ganaste", fichas[index]);
+      return alert("¡Ganaste! El jugador " + fichas[index] + " ha ganado.");
     }
   }
    ///////////////////////////////////////////////////
@@ -125,7 +138,10 @@ function gane() {
   if (marcadas === ticTacToe.length) {
     return alert("Empate");
   }
-}
+  
+  }
+  
+
 ///////////////////////////////////////////////////////////////////////////////////
 //boton para borrar el tablero
 reiniciarBtn.addEventListener("click", reiniciarTablero);
@@ -137,3 +153,10 @@ function reiniciarTablero() {
     ticTacToe[i].innerHTML = "";
   }
 }
+
+
+
+
+
+//condición                                    ? verdadero : falso;
+// jugadorActual = (jugadorActual === jugadorO) ? jugadorX : jugadorO;
