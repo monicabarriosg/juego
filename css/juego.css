@@ -10,13 +10,12 @@
 .board {
   display: inline-block;
   margin-bottom: 20px;
-
 }
 
 .fila {
   text-align: center;
   display: flex;
-  margin-left: 620px;
+  margin-left: 460px;
 }
 
 .celda {
@@ -31,7 +30,6 @@
   background-color: rgb(234, 177, 217);
   margin-left: 3px;
   border-radius: 10px; /* Bordes redondeados */
-  
 }
 /* boton para ir a otro gato */
 .pulse-effect {
@@ -41,9 +39,8 @@
   cursor: pointer;
   border-radius: 5px;
   transition: transform 0.3s ease-in-out; /* Transición suave del efecto de pulsación */
-  margin-left: 45%;
-
-
+  margin-left: 510px;
+  margin-top: 10px;
 }
 
 .pulse-effect:hover {
@@ -51,15 +48,17 @@
 }
 
 .pulse-effect:active {
-  transform: scale(0.90); /* Reduce ligeramente el tamaño del botón cuando se hace clic */
+  transform: scale(
+    0.9
+  ); /* Reduce ligeramente el tamaño del botón cuando se hace clic */
 }
 
-.titulo{
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+.titulo {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   margin-right: 10px;
 }
 /* boton de reiniciar */
-.boot{
+.boot {
   border: none;
   background-color: rgb(237, 192, 228);
   padding: 14px 28px;
@@ -70,10 +69,10 @@
   margin-top: 2%;
   margin-right: 50%;
 }
-.boot:active{
-  transform: scale(0.90);
+.boot:active {
+  transform: scale(0.9);
 }
-.boot:hover{
+.boot:hover {
   background-color: aliceblue;
 }
 #cortina {

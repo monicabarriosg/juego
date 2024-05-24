@@ -1,6 +1,6 @@
 let ticTacToe = document.getElementsByClassName("celda");
 let reiniciarBtn = document.getElementById("reiniciarBtn");
-let turnoActual = document.getElementById("turnoActual")
+let turnoActual = document.getElementById("turnoActual");
 
 // conectado a mi html po id
 let b00 = document.getElementById("b00");
@@ -25,17 +25,16 @@ let index2;
 // Variables para mantener el seguimiento del jugador actual
 let jugadorActual = jugadorO;
 
-
 /////////////////////////////////////////////////////////////////////////////////////////////////
 // este for me ayuda a iterar lo que declare dentro de ticTacToe
 for (let index = 0; index < ticTacToe.length; index++) {
   // esta en la escucha de cada click en las celdas
- 
+
   ticTacToe[index].addEventListener("click", function () {
-    
     //operador ternario
-    jugadorActual = (jugadorActual === jugadorO) ? jugadorX : jugadorO;
-    document.getElementById("turnoActual").innerText = "Turno de: " + jugadorActual;
+    jugadorActual = jugadorActual === jugadorO ? jugadorX : jugadorO;
+    document.getElementById("turnoActual").innerText =
+      "Turno de: " + jugadorActual;
     // ahora bien el jugador va a ser O por ende cuando de click en las celdas O es lo que se va a poner
     ticTacToe[index].innerHTML = "O";
     //una bandera en verdadero para iniciar el while
@@ -47,14 +46,13 @@ for (let index = 0; index < ticTacToe.length; index++) {
       index2 = Math.floor(Math.random() * 9);
       if (
         ticTacToe[index2].innerHTML != "O" &&
-        ticTacToe[index2].innerHTML != "X" ) {
-                  
+        ticTacToe[index2].innerHTML != "X"
+      ) {
         //setTime es para que el bot tenga un tiemo para poner la ficha en este caso sera de 1 segundo
         //para no tire de una vez la ficha y parezca que esta calculando donde poner la ficha
         setTimeout(() => {
           //console.log(ticTacToe[index2]);
           ticTacToe[index2].innerHTML = "X";
-         
         }, 1000);
         flag = false;
         //termina la funcion y entonces pasa a falso
@@ -65,16 +63,13 @@ for (let index = 0; index < ticTacToe.length; index++) {
     }
     //if para el gane de  mi funcion
     if (gane()) {
-     
-    } 
-    
+    }
   });
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
 // funcion para velidar el ganador
 function gane() {
-  
   // esta variable es para que si todas las celdas del tic tac toe estan marcadas ero no se cumplio
   //ninguna condicion anterior entonces sea un empate
   let marcadas = 0;
@@ -95,9 +90,7 @@ function gane() {
         b21.innerHTML == fichas[index] &&
         b22.innerHTML == fichas[index])
     ) {
-      
       return alert("¡Ganaste! El jugador " + fichas[index] + " ha ganado.");
-
     }
     /////////////////////////////////////////////
     // ganes en vertical
@@ -127,7 +120,7 @@ function gane() {
       return alert("¡Ganaste! El jugador " + fichas[index] + " ha ganado.");
     }
   }
-   ///////////////////////////////////////////////////
+  ///////////////////////////////////////////////////
   // Verificar si hay empate
   for (let i = 0; i < ticTacToe.length; i++) {
     if (ticTacToe[i].innerHTML !== "") {
@@ -138,9 +131,7 @@ function gane() {
   if (marcadas === ticTacToe.length) {
     return alert("Empate");
   }
-  
-  }
-  
+}
 
 ///////////////////////////////////////////////////////////////////////////////////
 //boton para borrar el tablero
@@ -153,10 +144,6 @@ function reiniciarTablero() {
     ticTacToe[i].innerHTML = "";
   }
 }
-
-
-
-
 
 //condición                                    ? verdadero : falso;
 // jugadorActual = (jugadorActual === jugadorO) ? jugadorX : jugadorO;
