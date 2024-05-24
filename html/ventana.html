@@ -4,30 +4,42 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>gato 2.0</title>
+    <!-- llmado al css -->
     <link rel="stylesheet" href="../css/2.0.css" />
   </head>
+  <!-- una clase de fondo para los estilos -->
   <body class="fondo">
+    <!-- este div contiene a todo el tic tac toe la clase es para los estilos -->
     <div class="contenedor">
+      <!-- un h1 para un titulo con el nombre del juego -->
       <h1 class="titulo">tic tac toe fruit</h1>
       <p id="turnoActual"></p>
+      <!-- primer div contiene las primeras tres filas -->
       <div class="fila">
+        <!-- las id son para el java y asi lograr verlo como una matriz con valores quemados -->
         <div class="celda" id="b00"></div>
         <div class="celda" id="b01"></div>
         <div class="celda" id="b02"></div>
       </div>
+      <!-- este div contiene las segundas tres filas -->
       <div class="fila">
+        <!-- cada id lleva una secuencia de tres en tres  -->
         <div class="celda" id="b10"></div>
         <div class="celda" id="b11"></div>
         <div class="celda" id="b12"></div>
       </div>
+      <!-- este div contiene las ultimas tres filas -->
       <div class="fila">
         <div class="celda" id="b20"></div>
         <div class="celda" id="b21"></div>
         <div class="celda" id="b22"></div>
       </div>
+    
     </div>
+    <!-- este boton es para que cuando alguien gane se pueda limpiar el tablero y olver a jugar -->
     <button id="reiniciarBtn" class="boot">reiniciar</button>
     <p id="ganaste"></p>
+    <!-- esto es para poner musica en la pagina web -->
     <audio controls class="audio">
       <source
         src="../audio/futuristic-logo-3-versions-149429.mp3"
@@ -37,7 +49,7 @@
         <a href="../audio/futuristic-logo-3-versions-149429.mp3"></a>
       </p>
     </audio>
-
+    <!-- llamado al js -->
     <script src="../java/2.0.js"></script>
   </body>
 </html>

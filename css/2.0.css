@@ -1,3 +1,4 @@
+/* estilos para mi fondo de pagina */
 .fondo {
   font-family: Verdana;
   background-image: url(https://i.pinimg.com/564x/1a/9c/c4/1a9cc4ae5e7f7a5e097ae9ded89d37e8.jpg);
@@ -5,6 +6,7 @@
   background-attachment: fixed;
   background-size: cover;
 }
+/* esto contiene a todo mi tic tac toe ya que es un contenedor padre */
 .contenedor {
   grid-template-columns: 300px 20px;
   text-align: center;
@@ -31,7 +33,7 @@
     240
   ); /* Cambia el color de fondo al pasar sobre las celdas */
 }
-
+/* el tic tac toe y sus celdas */
 .celda {
   width: 100px;
   height: 100px;
@@ -54,7 +56,7 @@
   margin-top: 2%;
   margin-right: 90%;
 }
-
+/* titulo en el apartado de reglas */
 .titulo {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   margin-right: 10px;
@@ -64,19 +66,13 @@
   margin-left: 20px;
   margin-top: 40px;
 }
+/* contiene estilos de mi html de reglas  */
 .regla{
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   margin-left: 20px;
 }
-.textimg{
-  height: 30px;
-  width: 30px;
 
-}
-.font{
- 
- 
-  }
+/* los estilos de mi nav en el html de reglas */
 .menu{
   
   margin-left: 0%;
@@ -86,10 +82,10 @@
   text-decoration: none;
   
 }
+/* esto contiene los estilos de mi ventana de contacto */
 .contacto{
   font-family: arial;
   font-weight: 40px;
   justify-content: center;
   margin-right: 300px;
-
 }
