@@ -32,9 +32,9 @@ for (let index = 0; index < ticTacToe.length; index++) {
 
   ticTacToe[index].addEventListener("click", function () {
     //operador ternario
-    
-//condición                                    ? verdadero : falso;
-// jugadorActual = (jugadorActual === jugadorO) ? jugadorX : jugadorO;
+
+    //condición                                    ? verdadero : falso;
+    // jugadorActual = (jugadorActual === jugadorO) ? jugadorX : jugadorO;
     jugadorActual = jugadorActual === jugadorO ? jugadorX : jugadorO;
     document.getElementById("turnoActual").innerText =
       "Turno de: " + jugadorActual;
@@ -147,4 +147,3 @@ function reiniciarTablero() {
     ticTacToe[i].innerHTML = "";
   }
 }
-
