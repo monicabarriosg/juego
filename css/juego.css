@@ -1,3 +1,4 @@
+/* contiene a mi tic tac toe */
 .contenedor {
   grid-template-columns: 300px 20px;
   text-align: center;
@@ -11,13 +12,13 @@
   display: inline-block;
   margin-bottom: 20px;
 }
-
+/* contiene los estilos de las filas de mi tic tac toe */
 .fila {
   text-align: center;
   display: flex;
   margin-left: 460px;
 }
-
+/* contiene los estilos de las celdas de mi tic tac toe */
 .celda {
   width: 100px;
   height: 100px;
@@ -42,11 +43,11 @@
   margin-left: 510px;
   margin-top: 10px;
 }
-
+/* boton para ir a otro gato */
 .pulse-effect:hover {
   background-color: #efa5cc; /* Cambia el color al pasar el cursor sobre el botón */
 }
-
+/* boton para ir a otro gato */
 .pulse-effect:active {
   transform: scale(
     0.9
@@ -69,18 +70,11 @@
   margin-top: 2%;
   margin-right: 50%;
 }
+/* boton de reiniciar */
 .boot:active {
   transform: scale(0.9);
 }
+/* boton de reiniciar */
 .boot:hover {
   background-color: aliceblue;
-}
-#cortina {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 999;
 }
