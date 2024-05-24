@@ -61,53 +61,68 @@ for (let index = 0; index < ticTacToe.length; index++) {
    
 }
 
-    // funcion para ver el ganador
+   
+    // funcion para velidar el ganador
     function gane() {
+        // esta variable es para que si todas las celdas del tic tac toe estan marcadas ero no se cumplio 
+        //ninguna condicion anterior entonces sea un empate
+        let marcadas = 0;
+        // esta variale es para que el for sepa co que van a jugar
+        let fichas = ["🍇", "🍓"];
+    
+        // es for es mi filtro para saber prmedi de las fichas cual es el gane si horizontal vertical o  en diagonal
+        for (let index = 0; index < fichas.length; index++) {
+            // ganes en horizontal
+            if ((b00.innerHTML == fichas[index] && b01.innerHTML == fichas[index] && b02.innerHTML == fichas[index]) ||
+                (b10.innerHTML == fichas[index] && b11.innerHTML == fichas[index] && b12.innerHTML == fichas[index]) ||
+                (b20.innerHTML == fichas[index] && b21.innerHTML == fichas[index] && b22.innerHTML == fichas[index])) {
+                return alert("Ganaste", fichas[index]);
+            }
+            // ganes en vertical
+            if ((b00.innerHTML == fichas[index] && b10.innerHTML == fichas[index] && b20.innerHTML == fichas[index]) ||
+                (b01.innerHTML == fichas[index] && b11.innerHTML == fichas[index] && b21.innerHTML == fichas[index]) ||
+                (b02.innerHTML == fichas[index] && b12.innerHTML == fichas[index] && b22.innerHTML == fichas[index])) {
+                return alert("Ganaste", fichas[index]);
+            }
+            // ganes de las diagonales
+            if ((b00.innerHTML == fichas[index] && b11.innerHTML == fichas[index] && b22.innerHTML == fichas[index]) ||
+                (b20.innerHTML == fichas[index] && b11.innerHTML == fichas[index] && b02.innerHTML == fichas[index])) {
+                return alert("Ganaste", fichas[index]);
+            }
+        }
+    
+        // Verificar si hay empate
+        for (let i = 0; i < ticTacToe.length; i++) {
+            if (ticTacToe[i].innerHTML !== "") {
+                marcadas++;
+            }
+        }
+        // Si todas las celdas están marcadas y no hay ganador, es un empate
+        if (marcadas === ticTacToe.length) {
+            return alert("Empate");
+        }
+    }
+    
 
-      
-        // fichas es solo para qu el for sepa con que va  trabajar de la funcion
-        let fichas =[ "🍇", "🍓"]
-      for (let index = 0; index < fichas.length; index++) {
-      
-         if (b00.innerHTML == fichas[index] && b01.innerHTML == fichas[index] && b02.innerHTML == fichas[index]) {
-
+    //   console.log()
+    //   console.log();
+    ///funcion para mostrar el ganador 
+    //darGanador ("ganador" + espacio)
+    // function darGanador(ganador) {
+    //     document.getElementById("ganaste").innerHTML = ganador 
+    //     if (gane()) {
+        
+    //         ticTacToe[index].removeEventListener('click',function  () {
+                        
+    //         } );
+    
+    //      }
+    // }
+              
             
-            return alert("Ganaste", fichas[index]);
-         }
-         
-        //  dara true si todos los operandos son true. En caso contrario, será false y brinca al siguiente if .
-         if (b10.innerHTML == fichas[index] && b11.innerHTML == fichas[index] && b12.innerHTML == fichas[index] ) {
-            return alert("Ganaste", fichas[index]);
-         }
-        //  igual igual ya que debe cumplirse cada uno 
-         if (b02.innerHTML == fichas[index] && b12.innerHTML == fichas[index] && b22.innerHTML == fichas[index]) {
-            return alert("Ganaste", fichas[index]);
-         }
-         ////////////////////////////////////////////////////////////////////////////////////////////
-        //  vertical 
-        if (b00.innerHTML == fichas[index] && b10.innerHTML == fichas[index] && b20.innerHTML == fichas[index]) {
-            return alert("Ganaste", fichas[index]);
-        }
-        if (b01.innerHTML == fichas[index] && b11.innerHTML == fichas[index] && b21.innerHTML == fichas[index]) {
-           return alert("Ganaste", fichas[index]);
-        }
-        if (b20.innerHTML == fichas[index] && b21.innerHTML == fichas[index] && b22.innerHTML == fichas[index]) {
-           return alert("Ganaste", fichas[index]);
-        }
-       
-       /////////////////////////////////////////////////////////////////////////////////////////77
-       // diagonales 
-       if (b00.innerHTML == fichas[index] && b11.innerHTML == fichas[index] && b22.innerHTML == fichas[index]) {
-        return alert("Ganaste", fichas[index]);
-       }
-       if (b20.innerHTML == fichas[index] && b11.innerHTML == fichas[index] && b02.innerHTML == fichas[index]) {
-        return alert ("Ganaste", fichas[index]);
-       }
-      }
-      ///////////////////////////////////////////////////////////////////////////////////////////////////7
-      //empate
-}
 
+
+    
     //boton para borrar el tablero
     reiniciarBtn.addEventListener("click", reiniciarTablero);
     
@@ -118,6 +133,7 @@ for (let index = 0; index < ticTacToe.length; index++) {
             ticTacToe[i].innerHTML = "";
         }
     }
+
 
 
 
