@@ -64,3 +64,32 @@
   margin-left: 20px;
   margin-top: 40px;
 }
+.regla{
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  margin-left: 20px;
+}
+.textimg{
+  height: 30px;
+  width: 30px;
+
+}
+.font{
+ 
+ 
+  }
+.menu{
+  
+  margin-left: 0%;
+  font-size: 130%;
+  font-family: 'Franklin Gothic Medium',;
+  font-style: italic;
+  text-decoration: none;
+  
+}
+.contacto{
+  font-family: arial;
+  font-weight: 40px;
+  justify-content: center;
+  margin-right: 300px;
+
+}
